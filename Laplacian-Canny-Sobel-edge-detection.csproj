@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EmguCV.3.1.0.1\build\EmguCV.props" Condition="Exists('packages\EmguCV.3.1.0.1\build\EmguCV.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{044975F3-30E4-4191-8D5E-0BE7558744DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Laplacian_Canny_Sobel_edge_detection</RootNamespace>
+    <AssemblyName>Laplacian-Canny-Sobel-edge-detection</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.UI, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>packages\OpenTK.GLControl.1.1.2225.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>packages\ZedGraph.5.1.5\lib\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValoresCanny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValoresCanny.Designer.cs">
+      <DependentUpon>ValoresCanny.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ValoresCanny.resx">
+      <DependentUpon>ValoresCanny.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cublas64_75.dll" />
+    <Content Include="cudart64_75.dll" />
+    <Content Include="cufft64_75.dll" />
+    <Content Include="cvextern.dll" />
+    <Content Include="msvcp120.dll" />
+    <Content Include="msvcr120.dll" />
+    <Content Include="nppc64_75.dll" />
+    <Content Include="nppi64_75.dll" />
+    <Content Include="npps64_75.dll" />
+    <Content Include="opencv_aruco310.dll" />
+    <Content Include="opencv_bgsegm310.dll" />
+    <Content Include="opencv_calib3d310.dll" />
+    <Content Include="opencv_ccalib310.dll" />
+    <Content Include="opencv_core310.dll" />
+    <Content Include="opencv_cudaarithm310.dll" />
+    <Content Include="opencv_cudabgsegm310.dll" />
+    <Content Include="opencv_cudacodec310.dll" />
+    <Content Include="opencv_cudafeatures2d310.dll" />
+    <Content Include="opencv_cudafilters310.dll" />
+    <Content Include="opencv_cudaimgproc310.dll" />
+    <Content Include="opencv_cudalegacy310.dll" />
+    <Content Include="opencv_cudaobjdetect310.dll" />
+    <Content Include="opencv_cudaoptflow310.dll" />
+    <Content Include="opencv_cudastereo310.dll" />
+    <Content Include="opencv_cudawarping310.dll" />
+    <Content Include="opencv_cudev310.dll" />
+    <Content Include="opencv_datasets310.dll" />
+    <Content Include="opencv_dnn310.dll" />
+    <Content Include="opencv_face310.dll" />
+    <Content Include="opencv_features2d310.dll" />
+    <Content Include="opencv_ffmpeg310_64.dll" />
+    <Content Include="opencv_flann310.dll" />
+    <Content Include="opencv_fuzzy310.dll" />
+    <Content Include="opencv_highgui310.dll" />
+    <Content Include="opencv_imgcodecs310.dll" />
+    <Content Include="opencv_imgproc310.dll" />
+    <Content Include="opencv_line_descriptor310.dll" />
+    <Content Include="opencv_ml310.dll" />
+    <Content Include="opencv_objdetect310.dll" />
+    <Content Include="opencv_optflow310.dll" />
+    <Content Include="opencv_photo310.dll" />
+    <Content Include="opencv_plot310.dll" />
+    <Content Include="opencv_reg310.dll" />
+    <Content Include="opencv_rgbd310.dll" />
+    <Content Include="opencv_shape310.dll" />
+    <Content Include="opencv_stereo310.dll" />
+    <Content Include="opencv_stitching310.dll" />
+    <Content Include="opencv_structured_light310.dll" />
+    <Content Include="opencv_superres310.dll" />
+    <Content Include="opencv_surface_matching310.dll" />
+    <Content Include="opencv_text310.dll" />
+    <Content Include="opencv_tracking310.dll" />
+    <Content Include="opencv_video310.dll" />
+    <Content Include="opencv_videoio310.dll" />
+    <Content Include="opencv_videostab310.dll" />
+    <Content Include="opencv_xfeatures2d310.dll" />
+    <Content Include="opencv_ximgproc310.dll" />
+    <Content Include="opencv_xobjdetect310.dll" />
+    <Content Include="opencv_xphoto310.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EmguCV.3.1.0.1\build\EmguCV.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EmguCV.3.1.0.1\build\EmguCV.props'))" />
+    <Error Condition="!Exists('packages\EmguCV.3.1.0.1\build\EmguCV.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EmguCV.3.1.0.1\build\EmguCV.targets'))" />
+  </Target>
+  <Import Project="packages\EmguCV.3.1.0.1\build\EmguCV.targets" Condition="Exists('packages\EmguCV.3.1.0.1\build\EmguCV.targets')" />
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laplacian-Canny-Sobel-edge-detection", "Laplacian-Canny-Sobel-edge-detection.csproj", "{044975F3-30E4-4191-8D5E-0BE7558744DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{044975F3-30E4-4191-8D5E-0BE7558744DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044975F3-30E4-4191-8D5E-0BE7558744DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044975F3-30E4-4191-8D5E-0BE7558744DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044975F3-30E4-4191-8D5E-0BE7558744DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64B4B7E9-DA12-4E82-A07F-48DC3DC72C5D}
+	EndGlobalSection
+EndGlobal
